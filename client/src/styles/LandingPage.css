@@ -1,0 +1,182 @@
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  zoom: 1 !important;
+  transform: none !important;
+}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  background:#04111f;
+  color:white;
+  font-family:Poppins,sans-serif;
+  overflow-x:hidden;
+}
+
+.landing-page{
+  width:100%;
+}
+
+/* HERO */
+
+.hero{
+  min-height:100vh;
+
+  background:
+  linear-gradient(rgba(0, 0, 0, 0.7),rgba(2, 12, 1, 0.938)),
+  url("/images/hulk3.png")
+  center center/cover no-repeat;
+
+  display:flex;
+  justify-content:flex-start;
+  align-items:center;
+
+  padding-left:120px;
+  padding-right:120px;
+
+  position:relative;
+}
+
+.hero-content{
+  width:100%;
+  max-width:700px;
+  z-index:2;
+}
+
+.hero-tag{
+  background:#00d9ff20;
+  color:#00d9ff;
+  padding:10px 20px;
+  border-radius:30px;
+}
+
+.hero h1{
+  font-size:80px;
+  margin-top:25px;
+}
+
+.hero h1 span{
+  color:#00d9ff;
+}
+
+.hero p{
+  margin-top:20px;
+  font-size:20px;
+  line-height:32px;
+}
+
+.hero-buttons{
+  margin-top:35px;
+  display:flex;
+  gap:20px;
+}
+
+.join-btn,
+.login-btn{
+  padding:15px 35px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.join-btn{
+  background:#00d9ff;
+  color:black;
+}
+
+.login-btn{
+  border:2px solid white;
+  color:white;
+  width: 19%;
+}
+
+/* FEATURES */
+
+.features{
+  padding:80px 8%;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
+}
+
+.feature-card{
+  background:#0d2238;
+  padding:40px;
+  border-radius:20px;
+}
+
+.feature-card h3{
+  color:#00d9ff;
+  margin-bottom:15px;
+}
+
+/* GALLERY */
+
+.slider-gallery{
+  padding:80px 8%;
+}
+
+.slider-gallery h2{
+  text-align:center;
+  font-size:55px;
+  margin-bottom:40px;
+}
+
+.gymSwiper{
+  width:100%;
+  height:600px;
+  border-radius:25px;
+  overflow:hidden;
+}
+
+.gymSwiper img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* FOOTER */
+
+.footer{
+  background:#020b14;
+  padding:50px;
+  text-align:center;
+}
+
+.footer h2{
+  color:#00d9ff;
+  margin-bottom:10px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .hero h1{
+    font-size:45px;
+  }
+
+  .features{
+    grid-template-columns:1fr;
+  }
+
+  .gymSwiper{
+    height:300px;
+  }
+
+  .hero-buttons{
+    flex-direction:column;
+  }
+}

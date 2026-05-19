@@ -1,0 +1,36 @@
+.member-topbar {
+  height: 60px;
+  width: 99%;
+  background: #111010;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 25px;
+  /* border-radius: 14px; */
+  /* margin-bottom: 20px; */
+ /* position: absolute; */
+
+}
+
+.member-topbar h2 {
+  color: #bcdddd;
+}
+
+.topbar-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.topbar-actions button {
+  background: #665a5a;
+  color: white;
+  border: none;
+  /* padding: 8px 24px; */
+  border-radius: 8px;
+  margin-right: 5vh;
+  cursor: pointer;
+}
+
+.topbar-actions .logout {
+  background: #742017;
+}
