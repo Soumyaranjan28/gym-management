@@ -9,101 +9,101 @@ import AddMember from "./pages/AddMember";
 import PendingUsers from "./pages/PendingUsers";
 import LandingPage from "./pages/LandingPage";
 import Members from "./pages/Members";
-// function App() {
-//   return (
-//     <BrowserRouter>
-//       <Routes>
-//         {/* Landing Page */}
-//         <Route path="/" element={<LandingPage />} />
-
-//         {/* Login */}
-//         <Route path="/login" element={<Login />} />
-
-//         {/* Register */}
-//         <Route path="/register" element={<Register />} />
-//         <Route
-//           path="/admin/members"
-//           element={
-//             <ProtectedRoute role="admin">
-//               <Members />
-//             </ProtectedRoute>
-//           }
-//         />
-//         {/* Admin Dashboard */}
-//         <Route
-//           path="/admin"
-//           element={
-//             <ProtectedRoute role="admin">
-//               <AdminDashboard />
-//             </ProtectedRoute>
-//           }
-//         />
-
-//         {/* Add Member */}
-//         <Route
-//           path="/admin/add-member"
-//           element={
-//             <ProtectedRoute role="admin">
-//               <AddMember />
-//             </ProtectedRoute>
-//           }
-//         />
-
-//         {/* Pending Users */}
-//         <Route
-//           path="/admin/pending"
-//           element={
-//             <ProtectedRoute role="admin">
-//               <PendingUsers />
-//             </ProtectedRoute>
-//           }
-//         />
-
-//         {/* Member Dashboard */}
-//         <Route
-//           path="/member"
-//           element={
-//             <ProtectedRoute role="member">
-//               <MemberDashboard />
-//             </ProtectedRoute>
-//           }
-//         />
-//       </Routes>
-//     </BrowserRouter>
-//   );
-// }
-
-// export default App;
-export default function App() {
+function App() {
   return (
-    <div
-      style={{
-        height: "100vh",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-        background: "#0f172a",
-        color: "white",
-        fontFamily: "Arial",
-        textAlign: "center",
-        padding: "20px",
-      }}
-    >
-      <h1 style={{ fontSize: "3rem", marginBottom: "10px" }}>eFitness</h1>
+    <BrowserRouter>
+      <Routes>
+        {/* Landing Page */}
+        <Route path="/" element={<LandingPage />} />
 
-      <h2 style={{ color: "#38bdf8", marginBottom: "20px" }}>
-        Website Under Maintenance
-      </h2>
+        {/* Login */}
+        <Route path="/login" element={<Login />} />
 
-      <p style={{ maxWidth: "600px", lineHeight: "1.8" }}>
-        We are currently upgrading our gym portal to improve your experience.
-        The website will be available again soon.
-      </p>
+        {/* Register */}
+        <Route path="/register" element={<Register />} />
+        <Route
+          path="/admin/members"
+          element={
+            <ProtectedRoute role="admin">
+              <Members />
+            </ProtectedRoute>
+          }
+        />
+        {/* Admin Dashboard */}
+        <Route
+          path="/admin"
+          element={
+            <ProtectedRoute role="admin">
+              <AdminDashboard />
+            </ProtectedRoute>
+          }
+        />
 
-      <div style={{ marginTop: "30px", opacity: 0.7 }}>
-        Thank you for your patience 💪
-      </div>
-    </div>
+        {/* Add Member */}
+        <Route
+          path="/admin/add-member"
+          element={
+            <ProtectedRoute role="admin">
+              <AddMember />
+            </ProtectedRoute>
+          }
+        />
+
+        {/* Pending Users */}
+        <Route
+          path="/admin/pending"
+          element={
+            <ProtectedRoute role="admin">
+              <PendingUsers />
+            </ProtectedRoute>
+          }
+        />
+
+        {/* Member Dashboard */}
+        <Route
+          path="/member"
+          element={
+            <ProtectedRoute role="member">
+              <MemberDashboard />
+            </ProtectedRoute>
+          }
+        />
+      </Routes>
+    </BrowserRouter>
   );
 }
+
+export default App;
+// export default function App() {
+//   return (
+//     <div
+//       style={{
+//         height: "100vh",
+//         display: "flex",
+//         flexDirection: "column",
+//         justifyContent: "center",
+//         alignItems: "center",
+//         background: "#0f172a",
+//         color: "white",
+//         fontFamily: "Arial",
+//         textAlign: "center",
+//         padding: "20px",
+//       }}
+//     >
+//       <h1 style={{ fontSize: "3rem", marginBottom: "10px" }}>eFitness</h1>
+
+//       <h2 style={{ color: "#38bdf8", marginBottom: "20px" }}>
+//         Website Under Maintenance
+//       </h2>
+
+//       <p style={{ maxWidth: "600px", lineHeight: "1.8" }}>
+//         We are currently upgrading our gym portal to improve your experience.
+//         The website will be available again soon.
+//       </p>
+
+//       <div style={{ marginTop: "30px", opacity: 0.7 }}>
+//         Thank you for your patience 💪
+//       </div>
+//     </div>
+//   );
+// }
