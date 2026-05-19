@@ -1,4 +1,3 @@
-
 import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
@@ -37,14 +36,23 @@ app.use(
 app.use(express.json());
 
 // CORS
+// CORS
+// app.use(
+//   cors({
+//     origin: [
+//       "http://localhost:5173",
+//       "http://localhost:5174",
+//       "https://gym-management-flame.vercel.app",
+//     ],
+//     credentials: true,
+//   }),
+// );
+// CORS
 app.use(
   cors({
-    origin: ["http://localhost:5173", "http://localhost:5174"],
-
-    credentials: true,
+    origin: "*",
   }),
 );
-
 // ==========================
 // ROUTES
 // ==========================
