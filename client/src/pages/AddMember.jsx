@@ -69,7 +69,7 @@
 
 //       // API CALL
 //       const response = await fetch(
-//         "http://localhost:5000/api/admin/add-member",
+//         "https://gym-backend-h2rw.onrender.com/api/admin/add-member",
 //         {
 //           method: "POST",
 
@@ -388,7 +388,7 @@ function AddMember() {
       };
 
       // API CALL
-      const response = await fetch("http://localhost:5000/api/member/add", {
+      const response = await fetch("https://gym-backend-h2rw.onrender.com/api/member/add", {
         method: "POST",
 
         headers: {

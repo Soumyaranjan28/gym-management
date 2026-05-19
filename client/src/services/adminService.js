@@ -1,6 +1,6 @@
 // import axios from "axios";
 
-// const API = "http://localhost:5000/api/admin";
+// const API = "https://gym-backend-h2rw.onrender.com/api/admin";
 
 // export const getMembers = () => {
 //   const token =
@@ -14,7 +14,7 @@
 // };
 // import axios from "axios";
 
-// const API = "http://localhost:5000/api/admin";
+// const API = "https://gym-backend-h2rw.onrender.com/api/admin";
 
 // const authHeader = () => ({
 //   headers: {
@@ -33,7 +33,8 @@
 // };
 import axios from "axios";
 
-const API = "http://localhost:5000/api/admin";
+// const API = "https://gym-backend-h2rw.onrender.com/api/admin";
+const API = "https://gym-backend-h2rw.onrender.com/api/admin";
 
 const authHeader = () => ({
   headers: {

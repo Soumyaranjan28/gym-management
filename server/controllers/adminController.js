@@ -80,7 +80,7 @@ export const uploadPhoto = async (req, res) => {
     }
 
     // SAVE IMAGE URL
-    user.photo = `http://localhost:5000/${req.file.path.replace(/\\/g, "/")}`;
+    user.photo = `https://gym-backend-h2rw.onrender.com/${req.file.path.replace(/\\/g, "/")}`;
 
     await user.save();
 
