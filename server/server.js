@@ -7,6 +7,7 @@ import attendanceRoutes from "./routes/attendanceRoutes.js";
 import authRoutes from "./routes/authRoutes.js";
 import adminRoutes from "./routes/adminRoutes.js";
 import memberRoutes from "./routes/memberRoutes.js";
+import paymentRoutes from "./routes/paymentRoutes.js";
 import path from "path";
 
 // ==========================
@@ -70,6 +71,7 @@ app.use("/api/member", memberRoutes);
 // IMPORTANT FOR ADD MEMBER PAGE
 app.use("/api/members", memberRoutes);
 app.use("/api/attendance", attendanceRoutes);
+app.use("/api/payments", paymentRoutes);
 
 // ==========================
 // HOME ROUTE

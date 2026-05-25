@@ -344,7 +344,6 @@ function AddMember() {
     username: "",
     password: "",
     admissionDate: "",
-    admissionDate: "",
   });
 
   const [loading, setLoading] = useState(false);

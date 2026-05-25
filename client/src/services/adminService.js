@@ -57,3 +57,33 @@ export const approveUser = (id) =>
 // ❌ Reject user
 export const rejectUser = (id) =>
   axios.delete(`${API}/reject/${id}`, authHeader());
+
+// ✅ Get all attendance (new feature)
+export const getAllAttendance = async () => {
+  try {
+    return await axios.get("https://gym-backend-h2rw.onrender.com/api/attendance/all", authHeader());
+  } catch (error) {
+    console.warn("Render server not responding, trying local server fallback", error);
+    return await axios.get("http://localhost:5000/api/attendance/all", authHeader());
+  }
+};
+
+// ✅ Get all payments
+export const getAllPayments = async () => {
+  try {
+    return await axios.get("https://gym-backend-h2rw.onrender.com/api/payments/all", authHeader());
+  } catch (error) {
+    console.warn("Render server not responding, trying local server fallback", error);
+    return await axios.get("http://localhost:5000/api/payments/all", authHeader());
+  }
+};
+
+// 💳 Process a new payment from member
+export const makePayment = async (paymentData) => {
+  try {
+    return await axios.post("https://gym-backend-h2rw.onrender.com/api/payments/pay", paymentData, authHeader());
+  } catch (error) {
+    console.warn("Render server not responding, trying local server fallback", error);
+    return await axios.post("http://localhost:5000/api/payments/pay", paymentData, authHeader());
+  }
+};

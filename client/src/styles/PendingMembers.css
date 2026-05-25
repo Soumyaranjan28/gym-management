@@ -1,219 +1,219 @@
-.pending-layout {
-  display: flex;
+/* ================= PENDING PAGE ================= */
+
+.pending-page {
   min-height: 100vh;
-  background:
-    radial-gradient(circle at top left, #0b2d55 0%, #021427 45%),
-    #021427;
-  color: white;
+  padding: 30px;
 }
 
-/* MAIN CONTENT */
-
-.pending-container {
-  flex: 1;
-  padding: 50px;
-}
-
-/* HEADER */
+/* ================= HEADER ================= */
 
 .pending-header {
   margin-bottom: 40px;
 }
 
+.pending-badge {
+  display: inline-block;
+  padding: 8px 18px;
+  border-radius: 30px;
+  background: rgba(251, 191, 36, 0.12);
+  color: #fbbf24;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  letter-spacing: 0.5px;
+}
+
 .pending-header h1 {
-  font-size: 62px;
-  font-weight: 900;
-  margin-bottom: 10px;
+  font-size: 48px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 8px;
 }
 
 .pending-header p {
-  font-size: 20px;
-  color: rgba(255,255,255,0.7);
+  font-size: 16px;
+  color: #9ca3af;
 }
 
-/* EMPTY */
+/* ================= EMPTY / LOADING ================= */
 
 .empty-box {
-  height: 350px;
-
-  border-radius: 30px;
-
-  background: rgba(255,255,255,0.04);
-
-  border: 1px solid rgba(255,255,255,0.08);
-
+  height: 320px;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
   text-align: center;
+  backdrop-filter: blur(10px);
 }
 
 .empty-box h2 {
-  font-size: 36px;
-  margin-bottom: 10px;
+  font-size: 28px;
+  color: #fff;
+  margin-bottom: 8px;
 }
 
 .empty-box p {
-  color: rgba(255,255,255,0.6);
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 15px;
 }
 
-/* GRID */
+.empty-icon-wrapper {
+  font-size: 48px;
+  color: #fbbf24;
+  margin-bottom: 18px;
+}
+
+.empty-box.loading .spinner {
+  width: 45px;
+  height: 45px;
+  border: 4px solid rgba(0, 217, 255, 0.15);
+  border-top-color: #00d9ff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin-bottom: 18px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ================= GRID ================= */
 
 .pending-grid {
   display: grid;
-
-  grid-template-columns:
-    repeat(auto-fit, minmax(320px, 1fr));
-
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  gap: 24px;
 }
 
-/* CARD */
+/* ================= CARD ================= */
 
 .pending-card {
   background:
     linear-gradient(
       145deg,
-      rgba(255,255,255,0.06),
-      rgba(255,255,255,0.02)
+      rgba(255, 255, 255, 0.06),
+      rgba(255, 255, 255, 0.02)
     );
-
-  border: 1px solid rgba(255,255,255,0.08);
-
-  border-radius: 30px;
-
-  padding: 35px;
-
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 24px;
+  padding: 30px;
   backdrop-filter: blur(14px);
-
-  transition: 0.3s;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .pending-card:hover {
-  transform: translateY(-6px);
-
-  border-color: rgba(0,217,255,0.3);
-
-  box-shadow:
-    0 15px 40px rgba(0,0,0,0.35);
+  transform: translateY(-5px);
+  border-color: rgba(0, 217, 255, 0.3);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.3);
 }
 
-/* AVATAR */
+/* ================= AVATAR ================= */
+
+.avatar-ring-outer {
+  margin-bottom: 20px;
+}
 
 .member-avatar {
-  width: 85px;
-  height: 85px;
-
+  width: 72px;
+  height: 72px;
   border-radius: 50%;
-
-  background:
-    linear-gradient(
-      135deg,
-      #00d9ff,
-      #0077ff
-    );
-
+  background: linear-gradient(135deg, #00d9ff, #0077ff);
   display: flex;
   align-items: center;
   justify-content: center;
-
-  font-size: 34px;
+  font-size: 28px;
   font-weight: 900;
-
-  margin-bottom: 25px;
+  color: white;
 }
 
-/* TEXT */
+/* ================= TEXT ================= */
 
 .pending-card h2 {
-  font-size: 32px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 14px;
+}
+
+.pending-detail-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   margin-bottom: 10px;
+  font-size: 14px;
+  color: #d1d5db;
 }
 
-.pending-card p {
-  color: rgba(255,255,255,0.75);
-  margin-bottom: 8px;
-  font-size: 17px;
-}
-
-.pending-card span {
+.detail-icon {
   color: #00d9ff;
-  font-size: 18px;
-  display: block;
-  margin-bottom: 25px;
+  font-size: 16px;
+  flex-shrink: 0;
 }
 
-/* BUTTONS */
+.pending-detail-row .email,
+.pending-detail-row .phone {
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+/* ================= BUTTONS ================= */
 
 .pending-actions {
   display: flex;
-  gap: 15px;
+  gap: 12px;
 }
 
 .pending-actions button {
   flex: 1;
-
-  padding: 15px;
-
+  padding: 13px;
   border: none;
-
-  border-radius: 16px;
-
-  font-size: 16px;
-
+  border-radius: 14px;
+  font-size: 14px;
   font-weight: 700;
-
   cursor: pointer;
-
-  transition: 0.3s;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* APPROVE */
-
 .approve-btn {
-  background:
-    linear-gradient(
-      90deg,
-      #00d084,
-      #00a86b
-    );
-
+  background: linear-gradient(135deg, #10b981, #059669);
   color: white;
+  box-shadow: 0 6px 18px rgba(16, 185, 129, 0.2);
 }
 
 .approve-btn:hover {
   transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(16, 185, 129, 0.35);
 }
 
 /* REJECT */
-
 .reject-btn {
-  background:
-    linear-gradient(
-      90deg,
-      #ff4d6d,
-      #ff1744
-    );
-
+  background: linear-gradient(135deg, #f43f5e, #e11d48);
   color: white;
+  box-shadow: 0 6px 18px rgba(244, 63, 94, 0.2);
 }
 
 .reject-btn:hover {
   transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(244, 63, 94, 0.35);
 }
 
-/* MOBILE */
+/* ================= MOBILE ================= */
 
 @media (max-width: 768px) {
-
-  .pending-container {
-    padding: 25px;
+  .pending-page {
+    padding: 18px;
   }
 
   .pending-header h1 {
-    font-size: 42px;
+    font-size: 34px;
   }
 
   .pending-grid {

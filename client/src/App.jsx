@@ -13,6 +13,8 @@ import Attendance from "./pages/Attendance";
 /* NEW PAGES */
 import Workouts from "./pages/Workouts";
 import Profile from "./pages/Profile";
+import Payments from "./pages/Payments";
+import Reports from "./pages/Reports";
 
 function App() {
   return (
@@ -61,6 +63,24 @@ function App() {
           element={
             <ProtectedRoute role="admin">
               <Members />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/admin/payments"
+          element={
+            <ProtectedRoute role="admin">
+              <Payments />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/admin/reports"
+          element={
+            <ProtectedRoute role="admin">
+              <Reports />
             </ProtectedRoute>
           }
         />

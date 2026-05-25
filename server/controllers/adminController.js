@@ -1,5 +1,6 @@
 
 import User from "../models/User.js";
+import Payment from "../models/Payment.js";
 
 // ==========================
 // DASHBOARD STATS
@@ -8,34 +9,42 @@ export const getDashboardStats = async (req, res) => {
   try {
     const totalMembers = await User.countDocuments({
       role: "member",
+      isApproved: true
     });
 
     const newMembers = await User.countDocuments({
       role: "member",
-
+      isApproved: true,
       createdAt: {
         $gte: new Date(
           new Date().setDate(
-            new Date().getDate() - 7
+            new Date().getDate() - 30
           )
         ),
       },
     });
 
+    const pendingMembers = await User.countDocuments({
+      role: "member",
+      isApproved: false
+    });
+
+    // Calculate real revenue
+    const payments = await Payment.find({ status: "Paid" });
+    const totalRevenue = payments.reduce((sum, p) => sum + (p.amount || 0), 0);
+
     res.json({
       totalMembers,
-
       expiringMembers: 0,
-
       newMembers,
-
+      pendingMembers,
+      totalRevenue,
       visitorsToday: 0,
-
       bookings: 0,
     });
 
   } catch (error) {
-
+    console.error("Stats fetch error:", error);
     res.status(500).json({
       message: "Error fetching stats",
     });
