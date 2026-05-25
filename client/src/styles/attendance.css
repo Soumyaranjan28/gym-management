@@ -1,0 +1,42 @@
+.attendance-page{
+  min-height:100vh;
+  background:#04111f;
+  color:white;
+  padding:40px;
+}
+
+.attendance-page h1{
+  margin-bottom:30px;
+  color:#00d9ff;
+}
+
+.attendance-table{
+  overflow-x:auto;
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  background:#0b2340;
+  border-radius:15px;
+  overflow:hidden;
+}
+
+thead{
+  background:#00d9ff;
+  color:black;
+}
+
+th,
+td{
+  padding:18px;
+  text-align:left;
+}
+
+tr{
+  border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+tbody tr:hover{
+  background:#102d50;
+}

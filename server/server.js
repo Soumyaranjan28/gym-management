@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 
 import connectDB from "./config/db.js";
-
+import attendanceRoutes from "./routes/attendanceRoutes.js";
 import authRoutes from "./routes/authRoutes.js";
 import adminRoutes from "./routes/adminRoutes.js";
 import memberRoutes from "./routes/memberRoutes.js";
@@ -69,6 +69,7 @@ app.use("/api/member", memberRoutes);
 // ADD MEMBER ROUTE
 // IMPORTANT FOR ADD MEMBER PAGE
 app.use("/api/members", memberRoutes);
+app.use("/api/attendance", attendanceRoutes);
 
 // ==========================
 // HOME ROUTE

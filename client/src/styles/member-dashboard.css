@@ -1,204 +1,400 @@
-/* ===== PAGE RESET ===== */
-.member-page {
-  width: 100vw;
-  height: 100vh;
-  overflow-x: hidden;
-  background: #301c24;
-  color: #0af1f1;
+.hero{
+  position: relative;
 }
 
-/* ===== MAIN CONTAINER ===== */
-.member-container {
-  padding: 20px;
-  max-width: 1400px;
-  margin: auto;
-  box-sizing: border-box;
-  /* background-color: ; */
+.hero-content{
+  position: relative;
+  z-index: 10;
 }
 
-/* ===== STATS ===== */
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  margin-bottom: 25px;
-  /* background-color: ; */
+.attendance-btn{
+  cursor: pointer;
+  position: relative;
+  z-index: 1000;
+}
+.member-dashboard{
+  min-height:100vh;
+  background:#021526;
+  padding:20px;
+  color:white;
+  font-family:Arial, sans-serif;
 }
 
-/* ===== CHARTS ===== */
-.charts-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 20px;
-  margin-bottom: 25px;
+
+/* ================= NAVBAR ================= */
+
+.topbar{
+  width:100%;
+  height:75px;
+
+  background:#081b33;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  padding:0 25px;
+
+  border-radius:18px;
+  margin-bottom:25px;
+
+  position:relative;
+
+  box-sizing:border-box;
 }
 
-/* ===== BOTTOM ===== */
-.bottom-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 20px;
+/* LOGO */
+
+.logo{
+  color:#00e5ff;
+
+  font-size:30px;
+  font-weight:700;
+
+  display:flex;
+  align-items:center;
+}
+
+/* NAV LINKS */
+
+.top-links{
+  display:flex;
+  align-items:center;
+
+  gap:24px;
+}
+
+/* LINKS */
+
+.top-links a{
+  color:white;
+  text-decoration:none;
+
+  font-size:16px;
+  font-weight:500;
+
+  transition:0.3s;
+}
+
+.top-links a:hover{
+  color:#00e5ff;
+}
+
+/* LOGOUT */
+
+.logout-btn{
+  background:#ff4040;
+  color:white;
+
+  border:none;
+  border-radius:10px;
+
+  padding:10px 18px;
+
+  font-size:14px;
+  font-weight:600;
+
+  cursor:pointer;
+
+  transition:0.3s;
+}
+
+.logout-btn:hover{
+  background:#ff2020;
+}
+
+/* HAMBURGER */
+
+/* ================= MOBILE ================= */
+
+@media(max-width:768px){
+
+  .topbar{
+    padding:0 20px;
+  }
+
   
-}
 
-/* ===== CARD ===== */
-.card {
-  background: #013036;
-  border-radius: 14px;
-  padding: 20px;
-  box-shadow: 0 10px 20px rgba(65, 40, 40, 0.4);
-  overflow: hidden;
+  .top-links{
+    position:absolute;
 
-}
+    top:85px;
+    left:0;
 
-/* ===== CHART FIX ===== */
-canvas {
-  max-width: 100% !important;
-  height: auto !important;
-}
+    width:100%;
 
-/* ===== RESPONSIVE ===== */
-@media (max-width: 1100px) {
-  .stats-grid {
-    grid-template-columns: repeat(2, 1fr);
+    background:#081b33;
+
+    flex-direction:column;
+
+    gap:20px;
+
+    padding:25px 0;
+
+    border-radius:18px;
+
+    display:none;
+
+    z-index:1000;
   }
 
-  .charts-grid,
-  .bottom-grid {
-    grid-template-columns: 1fr;
+  .top-links.active{
+    display:flex;
   }
-}
 
-@media (max-width: 600px) {
-  .stats-grid {
-    grid-template-columns: 1fr;
+  .top-links a{
+    font-size:18px;
   }
-}
-/* ===== BEST EXERCISES ===== */
-.best-exercises {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+
+  .logout-btn{
+    width:140px;
+  }
+
 }
 
-.best-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 12px;
+/* ================= HERO ================= */
+
+.hero-card{
+  background:linear-gradient(135deg,#00d2ff,#3a7bd5);
+  padding:35px;
+  border-radius:25px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:30px;
+  flex-wrap:wrap;
+  box-shadow:0 8px 30px rgba(0,0,0,0.2);
 }
 
-.best-header h3 {
-  color: #fff;
+.hero-card h1{
+  font-size:42px;
+  margin-bottom:10px;
 }
 
-.btn-secondary {
-  background: #1f1f1f;
-  color: #fff;
-  border: none;
-  padding: 6px 12px;
-  border-radius: 6px;
-  cursor: pointer;
+.hero-card p{
+  color:#f1f1f1;
+  font-size:16px;
 }
 
-.exercise-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  overflow-y: auto;
-  flex: 1;
+.start-btn{
+  background:white;
+  color:black;
+  border:none;
+  padding:14px 30px;
+  border-radius:12px;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
+  transition:0.3s;
 }
 
-.exercise-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #1c1c1c;
-  padding: 12px;
-  border-radius: 10px;
-  margin-bottom: 10px;
+.start-btn:hover{
+  transform:translateY(-3px);
 }
 
-.exercise-item strong {
-  color: #fff;
+/* ================= STATS ================= */
+
+.stats-container{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:20px;
+  margin-bottom:35px;
 }
 
-.exercise-item p {
-  font-size: 12px;
-  color: #aaa;
-  margin-top: 4px;
+.stat-box{
+  background:#0b2447;
+  padding:25px;
+  border-radius:20px;
+  box-shadow:0 0 20px rgba(0,255,255,0.08);
+  transition:0.3s;
 }
 
-.play-btn {
-  background: #00cec9;
-  border: none;
-  color: #000;
-  padding: 6px 10px;
-  border-radius: 50%;
-  cursor: pointer;
-}
-/* ===== EXERCISE ANIMATION ===== */
-.exercise-active {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  animation: fadeIn 0.4s ease;
+.stat-box:hover{
+  transform:translateY(-5px);
 }
 
-.progress-ring {
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  background: conic-gradient(
-    #00cec9 var(--progress),
-    #222 0
-  );
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 20px 0;
-  animation: pulse 1.2s infinite;
+.stat-box h3{
+  color:#00e5ff;
+  margin-bottom:10px;
+  font-size:22px;
 }
 
-.progress-ring span {
-  font-size: 26px;
-  font-weight: bold;
-  color: #fff;
+.stat-box h1{
+  font-size:40px;
 }
 
-.exercise-row {
-  display: flex;
-  justify-content: space-between;
-  padding: 14px;
-  background: #1c1c1c;
-  border-radius: 10px;
-  margin-top: 10px;
+.stat-box p{
+  margin-top:10px;
+  color:#ccc;
 }
 
-.exercise-row button {
-  background: #00cec9;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 50%;
-  cursor: pointer;
+/* ================= SECTION ================= */
+
+.section-title{
+  margin-bottom:20px;
 }
 
-.btn-done {
-  background: #00cec9;
-  border: none;
-  padding: 10px 18px;
-  border-radius: 8px;
-  cursor: pointer;
-  margin-top: 10px;
+.section-title h2{
+  font-size:34px;
 }
 
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.08); }
-  100% { transform: scale(1); }
+/* ================= WORKOUT GRID ================= */
+
+.workout-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:25px;
+  margin-bottom:35px;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
+.workout-card{
+  background:#0b2447;
+  border-radius:22px;
+  overflow:hidden;
+  transition:0.3s;
+  box-shadow:0 5px 20px rgba(0,0,0,0.2);
+}
+
+.workout-card:hover{
+  transform:translateY(-6px);
+}
+
+.workout-card img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+}
+
+/* ================= WORKOUT CONTENT ================= */
+
+.workout-content{
+  padding:22px;
+}
+
+.workout-day{
+  color:#00e5ff;
+  font-size:14px;
+  font-weight:600;
+}
+
+.workout-content h3{
+  margin:12px 0;
+  font-size:28px;
+  color:white;
+}
+
+.workout-content ul{
+  margin-top:10px;
+  padding-left:20px;
+}
+
+.workout-content li{
+  margin-bottom:10px;
+  color:#d9d9d9;
+}
+
+.workout-content button{
+  margin-top:22px;
+  width:100%;
+  padding:13px;
+  border:none;
+  border-radius:12px;
+  background:#00e5ff;
+  color:black;
+  font-weight:bold;
+  font-size:15px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.workout-content button:hover{
+  background:#00c8df;
+  transform:scale(1.02);
+}
+
+/* ================= MEMBERSHIP ================= */
+
+.membership-card{
+  background:#0b2447;
+  padding:28px;
+  border-radius:22px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:35px;
+  flex-wrap:wrap;
+  box-shadow:0 5px 20px rgba(0,0,0,0.2);
+}
+
+.membership-card h2{
+  margin-bottom:8px;
+}
+
+.membership-card p{
+  color:#ccc;
+}
+
+.membership-card button{
+  background:#00e5ff;
+  border:none;
+  padding:12px 26px;
+  border-radius:12px;
+  font-weight:bold;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.membership-card button:hover{
+  transform:scale(1.05);
+}
+
+/* ================= TIP CARD ================= */
+
+.tip-card{
+  background:#0b2447;
+  padding:25px;
+  border-radius:20px;
+}
+
+.tip-card h2{
+  margin-bottom:15px;
+  color:#00e5ff;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:768px){
+
+  .topbar{
+    flex-direction:column;
+    gap:18px;
+    padding:20px;
+  }
+
+  .top-links{
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:18px;
+  }
+
+  .hero-card{
+    flex-direction:column;
+    gap:20px;
+    text-align:center;
+  }
+
+  .hero-card h1{
+    font-size:32px;
+  }
+
+  .section-title h2{
+    font-size:26px;
+  }
+
+  .membership-card{
+    flex-direction:column;
+    gap:20px;
+    text-align:center;
+  }
+
 }

@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { loginUser } from "../services/authService";
@@ -26,9 +25,11 @@ function Login() {
 
     try {
       const res = await loginUser(form);
+      console.log(res.data);
 
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("role", res.data.role);
+      localStorage.setItem("user", JSON.stringify(res.data.user));
 
       if (res.data.role === "admin") {
         navigate("/admin");

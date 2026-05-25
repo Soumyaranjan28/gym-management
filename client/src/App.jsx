@@ -9,10 +9,16 @@ import AddMember from "./pages/AddMember";
 import PendingUsers from "./pages/PendingUsers";
 import LandingPage from "./pages/LandingPage";
 import Members from "./pages/Members";
+import Attendance from "./pages/Attendance";
+/* NEW PAGES */
+import Workouts from "./pages/Workouts";
+import Profile from "./pages/Profile";
+
 function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/attendance" element={<Attendance />} />
         {/* Landing Page */}
         <Route path="/" element={<LandingPage />} />
 
@@ -21,15 +27,8 @@ function App() {
 
         {/* Register */}
         <Route path="/register" element={<Register />} />
-        <Route
-          path="/admin/members"
-          element={
-            <ProtectedRoute role="admin">
-              <Members />
-            </ProtectedRoute>
-          }
-        />
-        {/* Admin Dashboard */}
+
+        {/* ADMIN */}
         <Route
           path="/admin"
           element={
@@ -39,7 +38,6 @@ function App() {
           }
         />
 
-        {/* Add Member */}
         <Route
           path="/admin/add-member"
           element={
@@ -49,7 +47,6 @@ function App() {
           }
         />
 
-        {/* Pending Users */}
         <Route
           path="/admin/pending"
           element={
@@ -59,12 +56,40 @@ function App() {
           }
         />
 
-        {/* Member Dashboard */}
+        <Route
+          path="/admin/members"
+          element={
+            <ProtectedRoute role="admin">
+              <Members />
+            </ProtectedRoute>
+          }
+        />
+
+        {/* MEMBER */}
         <Route
           path="/member"
           element={
             <ProtectedRoute role="member">
               <MemberDashboard />
+            </ProtectedRoute>
+          }
+        />
+
+        {/* NEW ROUTES */}
+        <Route
+          path="/workouts"
+          element={
+            <ProtectedRoute role="member">
+              <Workouts />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/profile"
+          element={
+            <ProtectedRoute role="member">
+              <Profile />
             </ProtectedRoute>
           }
         />

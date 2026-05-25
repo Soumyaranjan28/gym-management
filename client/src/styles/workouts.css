@@ -1,0 +1,96 @@
+.workout-page {
+  min-height: 100vh;
+  background: #021426;
+  padding: 25px;
+  color: white;
+}
+
+.workout-title {
+  font-size: 42px;
+  margin-bottom: 30px;
+}
+
+.workout-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.workout-card {
+  background: #0b2038;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0,255,255,0.1);
+  transition: 0.3s;
+}
+
+.workout-card:hover {
+  transform: translateY(-5px);
+}
+
+.workout-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.workout-content {
+  padding: 20px;
+}
+
+.workout-content h2 {
+  color: cyan;
+  margin-bottom: 10px;
+}
+
+.workout-content p {
+  margin-bottom: 10px;
+}
+
+.workout-content span {
+  color: #aaa;
+}
+
+.start-btn,
+.end-btn {
+  margin-top: 18px;
+  width: 100%;
+  border: none;
+  padding: 14px;
+  border-radius: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.start-btn {
+  background: linear-gradient(90deg, cyan, #0077ff);
+  color: white;
+}
+
+.end-btn {
+  background: crimson;
+  color: white;
+}
+
+.timer-box {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.timer-box h3 {
+  font-size: 40px;
+  color: cyan;
+  margin-bottom: 10px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .workout-title {
+    font-size: 28px;
+  }
+
+  .workout-card img {
+    height: 180px;
+  }
+}
